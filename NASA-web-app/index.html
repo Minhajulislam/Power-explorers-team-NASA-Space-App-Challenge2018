@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>wildFire || Nasa 2018 </title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+	<header>
+
+	<div><h3 id="main-heading">NASA Space App Chalange 2018</h3></div>
+	</header>
+	<div>
+	<h3 id="subject-heading">Spot That Fire!<br> Team: Power Explorers</h3>
+	</div>
+	<div id="map-table-div">
+	<div>
+
+    <div id="tb"><strong> Data Table </strong></div>
+	<table border="1" id="data-table">
+
+		<thead id="t-head">
+		<tr>
+		<td> <strong> Device Id </strong></td>
+		<td> <strong>device location </strong></td>
+		<td> <strong>Curret Status </strong></td>
+		</tr>
+		</thead>
+
+		<tbody id="table-body">
+			
+
+		</tbody>	
+
+	</table>
+	</div>
+
+	<div >
+
+		<h2 id="map-head">Map View</h2>
+
+		<div id="map"> </div>
+
+		<script >
+			function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: {lat: 23.8145218, lng:  90.4247211}
+        });
+
+        setMarkers(map);
+      }
+      var beaches = [
+        ['Bondi Beach', 23.8145218, 90.4247211, 4]
+        //, ['Coogee Beach', -33.923036, 151.259052, 5],
+        //['Cronulla Beach', -34.028249, 151.157507, 3],
+        //['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
+        //['Maroubra Beach', -33.950198, 151.259302, 1]
+      ];
+
+      function setMarkers(map) {
+      	var image = {
+          url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          size: new google.maps.Size(20, 32),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(0, 32)
+
+        };
+        var shape = {
+          coords: [1, 1, 1, 20, 18, 20, 18, 1],
+          type: 'poly'
+        };
+        var infowindow = new google.maps.InfoWindow();
+
+        for (var i = 0; i < beaches.length; i++) {
+          var beach = beaches[i];
+          var marker = new google.maps.Marker({
+            position: {lat: beach[1], lng: beach[2]},
+            map: map,
+            icon: image,
+            shape: shape,
+            title: beach[0],
+            zIndex: beach[3]
+          });
+
+          google.maps.event.addDomListener(marker, 'click', (function(marker, i) {
+                return function() {
+                    infowindow.setContent(beaches[i][0]);
+                    infowindow.open(map, marker);
+                }
+            })(marker, i));
+
+      }
+  }
+
+
+
+
+
+
+		</script>
+
+		<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgWy_7qnpG_P6CF6XsTMRuHK_pBol-gcs&callback=initMap">
+    </script>
+
+		<div></div>
+
+
+		
+	</div>
+	</div>
+
+
+  
+	  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDM9xm1piDSTsmtpCDuWGGBp0G4wwcR9vk&callback=initMap"
+  type="text/javascript"></script>
+
+  	<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCViGO4-DkhfoMi_5CW0uoIuZ35wMDD5uE",
+    authDomain: "wildfiremonitor-524ff.firebaseapp.com",
+    databaseURL: "https://wildfiremonitor-524ff.firebaseio.com",
+    projectId: "wildfiremonitor-524ff",
+    storageBucket: "wildfiremonitor-524ff.appspot.com",
+    messagingSenderId: "524997618229"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+<script type="text/javascript" src="index.js"></script>
+
+<footer>@Copyright Power Explorers</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "524997618229",
+    "firebase_url": "https://wildfiremonitor-524ff.firebaseio.com",
+    "project_id": "wildfiremonitor-524ff",
+    "storage_bucket": "wildfiremonitor-524ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524997618229:android:d6c7b9d79a25197d",
+        "android_client_info": {
+          "package_name": "com.google.wildfiremonitor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524997618229-tit9ntvhb8m36ime3gu231io1kcqnp03.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4UVRks9dQi0GFnhgaMEISo9lx7DLxTzQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
